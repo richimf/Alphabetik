@@ -1,3 +1,6 @@
+[![Java programming language](https://img.shields.io/badge/language-Java-bf7b3b.svg)](http://www.oracle.com/technetwork/java/index.html "Java programming language")
+[![MIT License](https://img.shields.io/badge/license-MIT-1e90ff.svg)](MIT-LICENSE.md "MIT License")
+
 # Alphabetik
 
 <snippet>
@@ -19,19 +22,31 @@ Give the example
 And repeat
 
 ## Usage
-
-```
-//Implementation
-        Alphabetik alphabetik = (Alphabetik) findViewById(R.id.rvSectionIndex);
-        //alphabetik.setAlphabet(String customAlphabet[]);
+Implement in your **Activity** as follows:
+```Java
+Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
         alphabetik.onSectionIndexClickListener(new Alphabetik.SectionIndexClickListener() {
             @Override
             public void onItemClick(View view, int position, String character) {
-                Log.i("View: ", "" + view + " Position = " + position + " Char = " + character);
-                Toast.makeText(getBaseContext(), " Position = " + position + " Char = " + character, Toast.LENGTH_SHORT).show();
+                String info = " Position = " + position + " Char = " + character;
+                Log.i("View: ", view + "," + info);
+                Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
                 listView.smoothScrollToPosition(getPositionFromData(character));
             }
         });
+```
+
+If you want to set a **custom alphabet**:
+```Java
+ private String[] customAlphabet = {"A", "E", "I", "O","U"};
+ 
+ Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
+ alphabetik.setAlphabet(customAlphabet);
+```
+Set custom letter to **bold**:
+```Java
+Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
+alphabetik.setPositionLetterToBold(letter);
 ```
 
 ## Contributing
