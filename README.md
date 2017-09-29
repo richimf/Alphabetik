@@ -9,20 +9,15 @@
 
 This project allows you to put an "Alphabet Section Index" beside your "ListView/RecyclerView" or any other "ScrollViewList" on your app. It is easy to use!. This is alike "Section Index" for iOS.
 
-## Installation
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+## Features
+- Alphabet bar in a side of the screen, this bar can be edited as a RecyclerView, so feel free to customize it :)
+- Methods:
+<br>**onSectionIndexClickListener( )** launches when user clicks on a letter.
+<br>**setAlphabet( )** developer can set up a custom alphabet.
+<br>**setPositionLetterToBold( )**
 
 ## Usage
-Implement in your **Activity** as follows:
+Implement in your **Activity** as follows: 
 ```Java
 Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
         alphabetik.onSectionIndexClickListener(new Alphabetik.SectionIndexClickListener() {
@@ -48,6 +43,16 @@ Set custom letter to **bold**:
 Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
 alphabetik.setPositionLetterToBold(letter);
 ```
+## Installation
+
+A step by step series of examples that tell you have to get a development env running
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
 
 ## Contributing
 
@@ -59,7 +64,7 @@ alphabetik.setPositionLetterToBold(letter);
 
 ## Credits
 
-Developed by Ricardo Montesinos
+Developed by Ricardo Montesinos n_n
 
 ## License
 This code is distributed under the terms and conditions of the MIT license.
