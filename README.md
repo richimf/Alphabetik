@@ -25,7 +25,7 @@ Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
             public void onItemClick(View view, int position, String character) {
                 String info = " Position = " + position + " Char = " + character;
                 Log.i("View: ", view + "," + info);
-                Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
                 listView.smoothScrollToPosition(getPositionFromData(character));
             }
         });
@@ -43,6 +43,46 @@ Set selected letter to **bold**:
 Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
 alphabetik.setLetterToBold(letter);
 ```
+
+Set up your **Layout** as follows:
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="richimf.com.alphabetik.MainActivity">
+
+    <!-- You can use a RecyclerView or another "List" instead -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbarStyle="outsideOverlay" />
+
+    <richimf.com.alphabetik.Alphabetik
+        android:id="@+id/alphSectionIndex"
+        android:layout_width="15dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginLeft="10dp" />
+
+</LinearLayout>
+```
+
+Customize **Letter** style, modify **item_letter.xml**:
+```XML
+<!-- Set any style you want -->
+<TextView
+        android:id="@+id/tvLetter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="12sp" />
+```
+
+
 ## Installation
 
 A step by step series of examples that tell you have to get a development env running
