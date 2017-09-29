@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     //Implement your data as you prefer, but sort it.
     private ListView listView;
 
+    //Example of data
     final String[] orderedData = new String[]{"Ana", "Bere", "Cesar", "Diana", "Elena", "Foca", "Gaby", "Helena", "Ivan",
             "Juan", "Karla", "Luis", "Mau", "Noe", "Oscar", "Paty", "Queso", "Richi", "Sandra",
             "Tio", "Uva", "Vic", "Wey", "Xavi", "Yuya", "Zeno"};
@@ -33,17 +34,19 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         //Implementation
-        Alphabetik alphabetik = (Alphabetik) findViewById(R.id.rvSectionIndex);
+        Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
         //alphabetik.setAlphabet(String customAlphabet[]);
         alphabetik.onSectionIndexClickListener(new Alphabetik.SectionIndexClickListener() {
             @Override
             public void onItemClick(View view, int position, String character) {
-                Log.i("View: ", "" + view + " Position = " + position + " Char = " + character);
-                Toast.makeText(getBaseContext(), " Position = " + position + " Char = " + character, Toast.LENGTH_SHORT).show();
+                String info = " Position = " + position + " Char = " + character;
+                Log.i("View: ", view + "," + info);
+                //Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
                 listView.smoothScrollToPosition(getPositionFromData(character));
             }
         });
-        //alphabetik.setPositionLetterToBold(letter);
+        //Set
+        //alphabetik.setLetterToBold(letter);
     }
 
     private int getPositionFromData(String character) {

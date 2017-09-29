@@ -41,7 +41,7 @@ public class Alphabetik extends RecyclerView {
     }
 
     /**
-     * Setter, set a custom alphabet to Alphabetik
+     * Setter method. Set a custom alphabet
      * @param {String} array of characters, e.g. "A", "B", "C"...
      * @method setAlphabet
      */
@@ -65,7 +65,12 @@ public class Alphabetik extends RecyclerView {
         return alphabetTemp;
     }
 
-    public void setPositionLetterToBold(String letter) {
+    /**
+     * Set letter to bold
+     * @param {String} "letter"
+     * @method setLetterToBold
+     */
+    public void setLetterToBold(String letter) {
         int index = Arrays.asList(alphabet).indexOf(letter);
         String regex = "[0-9]+";
         if (letter.matches(regex)) {
@@ -136,7 +141,7 @@ public class Alphabetik extends RecyclerView {
                 if (sectionIndexClickListener != null) {
                     String character = "" + tvLetter.getText().toString();
                     sectionIndexClickListener.onItemClick(view, this.getPosition(), character);
-                    setPositionLetterToBold(character);
+                    setLetterToBold(character);
                 }
             }
         }

@@ -13,10 +13,12 @@
         android:scrollbarStyle="outsideOverlay" />
 
     <richimf.com.alphabetik.Alphabetik
-        android:id="@+id/rvSectionIndex"
+        android:id="@+id/alphSectionIndex"
         android:layout_width="15dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:layout_marginLeft="10dp" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/border_orange"
+        android:padding="3dp" />
 
 </LinearLayout>
