@@ -101,8 +101,7 @@ allprojects {
 Add the dependency to gradle file (build.gradle inside "app"):
 ```
 dependencies {
-	...
-	compile 'com.github.richimf:Alphabetik:1.0.1'
+	compile 'com.github.richimf:Alphabetik:1.0.2'
 }
 ```
 
