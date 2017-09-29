@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Implementation
         Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
+        //String[] alphabet = {"A", "Y", "Z", "#"};
+        //alphabetik.setAlphabet(alphabet);
         //alphabetik.setAlphabet(String customAlphabet[]);
         alphabetik.onSectionIndexClickListener(new Alphabetik.SectionIndexClickListener() {
             @Override

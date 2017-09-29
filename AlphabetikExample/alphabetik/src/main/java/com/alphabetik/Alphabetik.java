@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by ricardo.montesinos on 6/22/17.
@@ -41,12 +42,15 @@ public class Alphabetik extends RecyclerView {
     }
 
     /**
-     * Setter method. Set a custom alphabet
+     * Setter method. Set a custom alphabet, this method sort it automatically.
+     *
      * @param {String} array of characters, e.g. "A", "B", "C"...
      * @method setAlphabet
      */
     public void setAlphabet(String[] alphabet) {
+        Arrays.sort(alphabet);
         this.alphabet = alphabet;
+        initRecyclerView();
     }
 
     //LISTENER
@@ -67,6 +71,7 @@ public class Alphabetik extends RecyclerView {
 
     /**
      * Set letter to bold
+     *
      * @param {String} "letter"
      * @method setLetterToBold
      */
