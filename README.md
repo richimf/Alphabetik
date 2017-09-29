@@ -8,6 +8,7 @@
 # ${1:Project Name}
 
 This project allows you to put an "Alphabet Section Index" beside your "ListView/RecyclerView" or any other "ScrollViewList" on your app. It is easy to use!. This is alike "Section Index" for iOS.
+<img src="https://github.com/richimf/Alphabetik/blob/master/Screenshot.png" width="350">
 
 ## Features
 - Alphabet bar in a side of the screen, this bar can be edited as a RecyclerView, so feel free to customize it :)
@@ -63,9 +64,10 @@ Set up your **Layout** as follows:
 
     <richimf.com.alphabetik.Alphabetik
         android:id="@+id/alphSectionIndex"
+        android:padding="2dp"
         android:layout_width="15dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp" />
 
 </LinearLayout>
