@@ -45,6 +45,7 @@ If you want to set a **custom alphabet**:
 Set selected letter to **bold**:
 ```Java
 Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
+//After scroll, get the first letter of the desired position, and then set it bold.
 alphabetik.setLetterToBold(letter);
 ```
 
