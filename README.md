@@ -18,6 +18,8 @@ This project allows you to put an "Alphabet Section Index" beside your "ListView
 <br>**setAlphabet( )** developer can set up a custom alphabet.
 <br>**setLetterToBold( )** you can change letter typeface to bold.
 
+<img src="https://github.com/richimf/Alphabetik/blob/master/Screenshot2.jpeg" width="550">
+
 ## Usage
 Implement in your **Activity** as follows: 
 ```Java
