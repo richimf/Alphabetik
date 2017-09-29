@@ -14,7 +14,7 @@ This project allows you to put an "Alphabet Section Index" beside your "ListView
 - Methods:
 <br>**onSectionIndexClickListener( )** launches when user clicks on a letter.
 <br>**setAlphabet( )** developer can set up a custom alphabet.
-<br>**setPositionLetterToBold( )**
+<br>**setLetterToBold( )** you can change letter typeface to bold.
 
 ## Usage
 Implement in your **Activity** as follows: 
