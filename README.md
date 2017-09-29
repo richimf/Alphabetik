@@ -1,5 +1,6 @@
 [![Java programming language](https://img.shields.io/badge/language-Java-bf7b3b.svg)](http://www.oracle.com/technetwork/java/index.html "Java programming language")
 [![MIT License](https://img.shields.io/badge/license-MIT-1e90ff.svg)](MIT-LICENSE.md "MIT License")
+[![](https://jitpack.io/v/richimf/Alphabetik.svg)](https://jitpack.io/#richimf/Alphabetik)
 
 # Alphabetik
 
@@ -113,6 +114,7 @@ dependencies {
 ## Credits
 
 Developed by Ricardo Montesinos /o.o/
+
 
 ## License
 This code is distributed under the terms and conditions of the MIT license.
