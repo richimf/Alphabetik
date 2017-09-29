@@ -86,15 +86,22 @@ Customize **Letter** style, modify **item_letter.xml**:
 
 
 ## Installation
-
-A step by step series of examples that tell you have to get a development env running
-Say what the step will be
-
+Add to gradle file, to the root gradle file (the one outside the "app" directory):
 ```
-Give the example
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 
-And repeat
+Add the dependency to gradle file (build.gradle inside "app"):
+```
+dependencies {
+	        compile 'com.github.richimf:Alphabetik:1.0.0'
+	}
+```
 
 ## Contributing
 
