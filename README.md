@@ -2,7 +2,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-1e90ff.svg)](MIT-LICENSE.md "MIT License")
 [![](https://jitpack.io/v/richimf/Alphabetik.svg)](https://jitpack.io/#richimf/Alphabetik)
 
-# Alphabetik
+# Alphabetik, "Alphabet Section Index" for Android
 
 <snippet>
   <content><![CDATA[
