@@ -30,10 +30,9 @@ public class Alphabetik extends RecyclerView {
         this.setOverScrollMode(OVER_SCROLL_NEVER);
         //this.setTextAlignment(TEXT_ALIGNMENT_CENTER);
         initRecyclerView();
-        //alphabet = generateAlphabet();
     }
 
-    public void initRecyclerView() {
+    private void initRecyclerView() {
         adapter = new SectionIndexAdapter(alphabet, getContext());
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         this.setHasFixedSize(true);
@@ -41,6 +40,11 @@ public class Alphabetik extends RecyclerView {
         this.setLayoutManager(linearLayoutManager);
     }
 
+    /**
+     * Setter, set a custom alphabet to Alphabetik
+     * @param {String} array of characters, e.g. "A", "B", "C"...
+     * @method setAlphabet
+     */
     public void setAlphabet(String[] alphabet) {
         this.alphabet = alphabet;
     }
