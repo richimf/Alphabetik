@@ -38,10 +38,10 @@ If you want to set a **custom alphabet**:
  Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
  alphabetik.setAlphabet(customAlphabet);
 ```
-Set custom letter to **bold**:
+Set selected letter to **bold**:
 ```Java
 Alphabetik alphabetik = (Alphabetik) findViewById(R.id.alphSectionIndex);
-alphabetik.setPositionLetterToBold(letter);
+alphabetik.setLetterToBold(letter);
 ```
 ## Installation
 
@@ -64,7 +64,7 @@ And repeat
 
 ## Credits
 
-Developed by Ricardo Montesinos n_n
+Developed by Ricardo Montesinos /o.o/
 
 ## License
 This code is distributed under the terms and conditions of the MIT license.
