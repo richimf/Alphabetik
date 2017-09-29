@@ -49,10 +49,8 @@ Set up your **Layout** as follows:
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="richimf.com.alphabetik.MainActivity">
+    android:layout_height="match_parent">
 
     <!-- You can use a RecyclerView or another "List" instead -->
     <ListView
@@ -62,7 +60,7 @@ Set up your **Layout** as follows:
         android:layout_weight="1"
         android:scrollbarStyle="outsideOverlay" />
 
-    <richimf.com.alphabetik.Alphabetik
+    <com.alphabetik.Alphabetik
         android:id="@+id/alphSectionIndex"
         android:padding="2dp"
         android:layout_width="15dp"
@@ -89,18 +87,19 @@ Customize **Letter** style, modify **item_letter.xml**:
 Add to gradle file, to the root gradle file (the one outside the "app" directory):
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 
 Add the dependency to gradle file (build.gradle inside "app"):
 ```
 dependencies {
-	        compile 'com.github.richimf:Alphabetik:1.0.0'
-	}
+	...
+	compile 'com.github.richimf:Alphabetik:1.0.0'
+}
 ```
 
 ## Contributing
