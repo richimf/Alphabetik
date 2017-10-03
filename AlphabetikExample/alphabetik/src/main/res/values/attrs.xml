@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Declare custom attributes for Alphabetik -->
+    <declare-styleable name="Alphabetik">
+        <!-- Size -->
+        <attr name="width" format="dimension" />
+        <attr name="fontSize" format="dimension" />
+        <!--attr name="selectedFontSize" format="dimension" /-->
+        <!-- Colors -->
+        <attr name="itemsColor" format="reference" />
+        <!--attr name="selectedItemColor" format="reference" /-->
+        <!--attr name="selectedItemBackground" format="reference" /-->
+    </declare-styleable>
+
+</resources>

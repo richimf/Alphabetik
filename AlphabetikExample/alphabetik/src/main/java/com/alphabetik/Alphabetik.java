@@ -1,17 +1,19 @@
 package com.alphabetik;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by ricardo.montesinos on 6/22/17.
@@ -23,6 +25,15 @@ public class Alphabetik extends RecyclerView {
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
             "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"};
 
+    //Attributes
+    private int width;
+    private float fontSize;
+    private int selectedFontSize;
+    private static int itemsColor;
+    private int selectedItemColor;
+    private int selectedItemBackground;
+
+    //Adapter & Manager
     private SectionIndexAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
 
@@ -30,7 +41,56 @@ public class Alphabetik extends RecyclerView {
         super(context, attrs);
         this.setOverScrollMode(OVER_SCROLL_NEVER);
         //this.setTextAlignment(TEXT_ALIGNMENT_CENTER);
+        getAttributes(context, attrs);
         initRecyclerView();
+    }
+
+    private void getAttributes(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.Alphabetik);
+
+        //Custom sizes
+        width = ta.getDimensionPixelSize(R.styleable.Alphabetik_width, 15);
+
+        int defaultSize = (int) spToPixel(context, 12);
+        int attFontSizeValue = ta.getDimensionPixelSize(R.styleable.Alphabetik_fontSize, defaultSize);
+        fontSize = pixelsToSp(context, attFontSizeValue);
+
+        //Custom colors
+        //Items Color
+        int aItemsColor = R.styleable.Alphabetik_itemsColor;
+        if (ta.hasValue(R.styleable.Alphabetik_itemsColor)) {
+            itemsColor = getColor(ta.getResourceId(aItemsColor, 0));
+        }
+
+        //TODO
+        //Selected Item Color
+        /*int aSelectedItemColor = R.styleable.Alphabetik_selectedItemColor;
+        if (ta.hasValue(aSelectedItemColor)) {
+            selectedItemColor = ta.getResourceId(aSelectedItemColor, 0);
+        }
+
+        //Selected Item Background
+        int aSelectedItemBackground = R.styleable.Alphabetik_selectedItemBackground;
+        if (ta.hasValue(aSelectedItemBackground)) {
+            selectedItemBackground = ta.getResourceId(aSelectedItemBackground, 0);
+        }*/
+
+        //Recycle
+        ta.recycle();
+    }
+
+    private int getColor(int id) {
+        return ContextCompat.getColor(getContext(), id);
+    }
+
+    private float pixelsToSp(Context context, int px) {
+        float scaledDensity = context.getResources().getDisplayMetrics().scaledDensity;
+        return px / scaledDensity;
+    }
+
+    private float spToPixel(Context context, int sp) {
+        float scaledDensity = context.getResources().getDisplayMetrics().scaledDensity;
+        return sp * scaledDensity;
     }
 
     private void initRecyclerView() {
@@ -58,7 +118,7 @@ public class Alphabetik extends RecyclerView {
         adapter.onSectionIndexClickListener(sectionIndexClickListener);
     }
 
-    //Fast Alphabet generation, 'Ñ' is not in this alphabet
+    //Fast Alphabet generation From A-Z
     private String[] generateAlphabet() {
         String[] alphabetTemp = new String[27];
         int index = 0;
@@ -123,6 +183,14 @@ public class Alphabetik extends RecyclerView {
             Typeface normalTypeface = Typeface.defaultFromStyle(Typeface.NORMAL);
             Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
             holder.tvLetter.setTypeface(position == boldPosition ? boldTypeface : normalTypeface);
+
+            //Custom Font size
+            holder.tvLetter.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize);
+
+            //Custom color
+            if (itemsColor != 0) {
+                holder.tvLetter.setTextColor(itemsColor);
+            }
         }
 
         @Override
