@@ -64,26 +64,30 @@ Set up your **Layout** as follows:
         android:layout_weight="1"
         android:scrollbarStyle="outsideOverlay" />
 
-    <com.alphabetik.Alphabetik
+   <com.alphabetik.Alphabetik
         android:id="@+id/alphSectionIndex"
-        android:padding="2dp"
-        android:layout_width="15dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginRight="5dp"
+        android:padding="3dp"
+        app:fontSize="16sp"
+        app:itemsColor="@color/colorBlue" />
 
 </LinearLayout>
 ```
 
-Customize **Letter** style, modify **item_letter.xml**:
+Customize style:
 ```XML
-<!-- Set any style you want -->
-<TextView
-        android:id="@+id/tvLetter"
-        android:layout_width="match_parent"
+<com.alphabetik.Alphabetik
+        android:id="@+id/alphSectionIndex"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="12sp" />
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5dp"
+        android:padding="3dp"
+        app:fontSize="16sp"
+        app:itemsColor="@color/colorBlue" />
 ```
 
 
