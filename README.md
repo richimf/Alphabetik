@@ -116,6 +116,10 @@ dependencies {
 }
 ```
 
+## TODO
+
+Swipe gesture along the index bar.
+
 ## Contributing
 
 1. Fork it!
